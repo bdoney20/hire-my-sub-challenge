@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Message from '../components/Message';
 
 class AddUser extends React.Component {
     constructor(props) {
@@ -43,11 +44,8 @@ class AddUser extends React.Component {
      return (
         <div className='container mx-auto p-10'>
             {this.state.message && (
-                <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 pb-5" role="alert">
-                    <p className="font-bold">{this.state.message}</p>
-                </div>
+                <Message message={this.state.message}/>
             )}
-            
         <form onSubmit={this.handleSubmit} className='pt-5'>
             <div className="grid xl:grid-cols-2 xl:gap-6">
                 <div className="relative z-0 w-full mb-6 group">
